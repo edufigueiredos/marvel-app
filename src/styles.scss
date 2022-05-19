@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/colors.scss';
+
+// CSS Reset
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: $blackColor2;
+}
