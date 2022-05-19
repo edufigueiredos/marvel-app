@@ -1,0 +1,53 @@
+@import './shared/styles/mixins.scss';
+@import './shared/styles/colors.scss';
+@import './shared/styles/font-size.scss';
+
+$headerHeight: 65px;
+$footerHeight: 65px;
+
+#app-container {
+  width: 100vw;
+  height: 100vh;
+  @include verticalContent();
+
+  header {
+    display: flex;
+    width: 100%;
+    height: $headerHeight;
+    background-color: $blackColor1;
+  }
+
+  #app-elements {
+    width: 100%;
+    height: calc(100% - $headerHeight);
+    @include horizontalContent();
+
+    nav {
+      width: 150px;
+      background-color: $blackColor3;
+    }
+
+    #app-content {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      @include verticalContent();
+
+      main {
+        width: 100%;
+        padding: 15px 25px;
+      }
+
+      footer {
+        width: 100%;
+        height: $footerHeight;
+        min-height: $footerHeight;
+        background-color: $blackColor1;
+        margin-top: auto;
+      }
+    }
+  }
+}
