@@ -1,0 +1,8 @@
+@mixin verticalContent() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin horizontalContent() {
+  display: flex;
+}
