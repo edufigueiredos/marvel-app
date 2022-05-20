@@ -1,3 +1,4 @@
+import { NavModule } from './shared/components/nav/nav.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
