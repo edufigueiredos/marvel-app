@@ -1,0 +1,13 @@
+@import '../../shared/styles/font-size.scss';
+
+.home-container {
+  h1 {
+    font-size: $bigSizeMd;
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: $mediumSizeMd;
+    text-align: justify;
+    margin-bottom: 15px;
+  }
+}

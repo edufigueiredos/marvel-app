@@ -18,7 +18,7 @@ $liBorderColor: white;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         &:hover {
-          background-color: rgba($color: #fff, $alpha: 0.2);
+          background-color: rgba($color: $fontColor1, $alpha: 0.2);
           letter-spacing: 2px;
           font-weight: bold;
         }
