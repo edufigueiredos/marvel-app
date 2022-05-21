@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharactersService } from './../../../shared/services/characters/characters.service';
 
 @Component({
   selector: 'app-characters-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private charactersService: CharactersService) { }
 
   ngOnInit(): void {
+
   }
 
 }
