@@ -9,3 +9,13 @@ export const allCharactersSelector = createSelector(
   characterSelector,
   (state) => state.characters
 )
+
+export const offsetSelector = createSelector(
+  characterSelector,
+  (state) => state.offset
+)
+
+export const limitSelector = createSelector(
+  characterSelector,
+  (state) => state.limit
+)

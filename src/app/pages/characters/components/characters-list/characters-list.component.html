@@ -1,25 +1,35 @@
 <section class="character-list-container">
   <div class="character-list-top-page-container">
     <h1 class="page-title">Personagens</h1>
-    <input [formControl]="characterName" type="text" placeholder="Pesquise por persoangens">
-  </div>
-  <div class="grid">
-    <app-card *ngFor="let char of character$ | async"
-    [title]="char?.name"
-    [imagePath]="char?.thumbnail?.path"
-    [imageExtension]="char?.thumbnail?.extension"
-    >
-      <div class="links-container">
-        <div class="links-content">
-          <a [routerLink]="['/characters/details', char?.id]">Info</a>
-          <a>Revistas</a>
-          <a>Series</a>
-          <a>Histórias</a>
-        </div>
+    <div class="limit-container">
+      <div>
+        <span for="limit-search">Limite por pesquisa</span>
+        <select id="limit-search" [formControl]="limitControl">
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
       </div>
-    </app-card>
+      <input [formControl]="characterNameControl" type="text" placeholder="Pesquise por persoangens">
+    </div>
   </div>
-  <div class="load-more-container">
-    <button class="primary" *ngIf="character$">Carregar personagens</button>
-  </div>
+  <ng-container *ngIf="characters$ | async as characterList">
+    <div class="grid">
+      <app-card *ngFor="let char of characterList" [title]="char?.name" [imagePath]="char?.thumbnail?.path"
+        [imageExtension]="char?.thumbnail?.extension">
+        <div class="links-container">
+          <div class="links-content">
+            <a [routerLink]="['/characters/details', char?.id]">Info</a>
+            <a>Revistas</a>
+            <a>Series</a>
+            <a>Histórias</a>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="load-more-container">
+      <button class="primary" (click)="loadMoreCharacters()"
+        *ngIf="!characterNameControl?.value && characterList?.length">Carregar personagens</button>
+    </div>
+  </ng-container>
 </section>

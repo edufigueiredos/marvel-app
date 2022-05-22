@@ -6,6 +6,17 @@
     @include horizontalContent();
     justify-content: space-between;
     align-items: center;
+
+    .limit-container {
+      @include horizontalContent();
+      align-items: center;
+      div {
+        margin-right: 15px;
+        span {
+          margin-right: 15px
+        }
+      }
+    }
   }
 
   .grid {
@@ -27,6 +38,6 @@
     @include horizontalContent();
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin: 15px 0;
   }
 }

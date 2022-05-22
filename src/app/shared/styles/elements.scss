@@ -8,6 +8,16 @@
 
 input[type=text] {
   all: unset;
+  box-sizing: border-box;
+  padding: 10px;
+  color: $fontColor1;
+  background-color: $tertiaryColor;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+select {
+  box-sizing: border-box;
   padding: 10px;
   color: $fontColor1;
   background-color: $tertiaryColor;
