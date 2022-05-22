@@ -1,1 +1,24 @@
-<h1>Personagens</h1>
+<section class="character-container">
+  <div class="character-top-page-container">
+    <h1 class="page-title">Personagens</h1>
+    <input [formControl]="characterName" type="text" placeholder="Pesquise por persoangens">
+  </div>
+  <div class="grid">
+    <ng-container *ngIf="character$ | async as apiResponse">
+      <app-card *ngFor="let char of apiResponse?.data?.results"
+      [title]="char?.name"
+      [imagePath]="char?.thumbnail?.path"
+      [imageExtension]="char?.thumbnail?.extension"
+      >
+        <div class="links-container">
+          <div class="links-content">
+            <a>Info</a>
+            <a>Revistas</a>
+            <a>Series</a>
+            <a>Histórias</a>
+          </div>
+        </div>
+      </app-card>
+    </ng-container>
+  </div>
+</section>

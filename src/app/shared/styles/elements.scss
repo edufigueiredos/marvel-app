@@ -1,0 +1,16 @@
+@import '../styles/font-size.scss';
+@import '../styles/colors.scss';
+
+.page-title {
+  font-size: $bigSizeSm;
+  margin-bottom: 15px;
+}
+
+input[type=text] {
+  all: unset;
+  padding: 10px;
+  color: $fontColor1;
+  background-color: $tertiaryColor;
+  font-weight: bold;
+  border-radius: 5px;
+}

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from './../../../../environments/environment';
 import { APIResponse } from '../../models/api-response.model';
+import { Character } from '../../models/character.model';
 
 @Injectable()
 export class CharactersService {
@@ -10,19 +11,19 @@ export class CharactersService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(offset = 0, limit = 20): Observable<APIResponse> {
+  getAll(offset = 0, limit = 20): Observable<APIResponse<Character>> {
     const params = new HttpParams()
       .set('offset', offset)
       .set('limit', limit);
-    return this.http.get<APIResponse>(`${this.apiUrl}/characters`, { params: params });
+    return this.http.get<APIResponse<Character>>(`${this.apiUrl}/characters`, { params: params });
   }
 
-  getById(id: number): Observable<APIResponse> {
-    return this.http.get<APIResponse>(`${this.apiUrl}/characters/${id}`)
+  getById(id: number): Observable<APIResponse<Character>> {
+    return this.http.get<APIResponse<Character>>(`${this.apiUrl}/characters/${id}`)
   }
 
-  getByName(name: string): Observable<APIResponse> {
+  getByName(name: string): Observable<APIResponse<Character>> {
     const params = new HttpParams().set('nameStartsWith', name);
-    return this.http.get<APIResponse>(`${this.apiUrl}/characters`, { params: params })
+    return this.http.get<APIResponse<Character>>(`${this.apiUrl}/characters`, { params: params })
   }
 }

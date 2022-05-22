@@ -1,15 +1,15 @@
 import { Character } from "./character.model";
 
-export interface APIResponse {
+export interface APIResponse<T> {
   code: number;
   status: string;
-  data: APIData;
+  data: APIData<T>;
 }
 
-export interface APIData {
+export interface APIData<T> {
   count: number;
   limit: number;
   offset: number;
-  results: Character[];
+  results: T[];
   total: number;
 }

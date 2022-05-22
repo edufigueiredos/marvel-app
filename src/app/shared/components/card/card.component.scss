@@ -1,0 +1,23 @@
+@import '../../styles/mixins.scss';
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include verticalContent();
+  background-position: center;
+  background-size: cover;
+
+  .top-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    z-index: 1;
+    background-color: rgba(#000, 0.4);
+  }
+
+  .card-content {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -6,3 +6,47 @@
 @mixin horizontalContent() {
   display: flex;
 }
+
+@mixin routerGrid($repeat: 4, $min: 300px, $max: 1fr, $auto-rows: 220px, $gap: 25px) {
+  display: grid;
+  grid-template-columns: repeat($repeat, minmax($min, $max));
+  grid-auto-rows: $auto-rows;
+  gap: $gap;
+
+  @media(max-width: 1510px) {
+    grid-template-columns: repeat($repeat - 1, minmax($min, $max));
+  }
+
+  @media(max-width: 1175px) {
+    grid-template-columns: repeat($repeat - 2, minmax($min, $max));
+  }
+
+  @media(max-width: 845px) {
+    grid-template-columns: repeat($repeat - 3, minmax($min, $max));
+  }
+}
+
+@mixin linksContainer($numberOfLinks: 4) {
+  display: flex;
+      justify-content: space-evenly;
+      z-index: 1;
+      padding: 3px 0;
+      background-color: rgba(#000, 0.4);
+
+      a {
+        all: unset;
+        width: calc(100% / $numberOfLinks);
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: text-shadow 0.2s ease-in-out;
+
+        &:hover {
+          text-shadow: 2px 2px 5px black;
+        }
+      }
+}
