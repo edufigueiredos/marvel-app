@@ -1,8 +1,8 @@
-@import "../../../shared/styles/mixins.scss";
-@import "../../../shared/styles/elements.scss";
+@import "../../../../shared/styles/mixins.scss";
+@import "../../../../shared/styles/elements.scss";
 
-.character-container {
-  .character-top-page-container {
+.character-list-container {
+  .character-list-top-page-container {
     @include horizontalContent();
     justify-content: space-between;
     align-items: center;

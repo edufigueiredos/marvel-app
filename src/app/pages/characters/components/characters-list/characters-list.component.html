@@ -1,5 +1,5 @@
-<section class="character-container">
-  <div class="character-top-page-container">
+<section class="character-list-container">
+  <div class="character-list-top-page-container">
     <h1 class="page-title">Personagens</h1>
     <input [formControl]="characterName" type="text" placeholder="Pesquise por persoangens">
   </div>
@@ -12,7 +12,7 @@
       >
         <div class="links-container">
           <div class="links-content">
-            <a>Info</a>
+            <a [routerLink]="['/characters/details', char?.id]">Info</a>
             <a>Revistas</a>
             <a>Series</a>
             <a>Histórias</a>
