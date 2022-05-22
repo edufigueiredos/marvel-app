@@ -14,3 +14,23 @@ input[type=text] {
   font-weight: bold;
   border-radius: 5px;
 }
+
+button {
+  all: unset;
+  cursor: pointer;
+  font-size: $mediumSizeSm;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: $tertiaryColor;
+  transition: all 0.2s ease-in-out;
+}
+
+button.primary {
+  background-color: $primaryColor;
+
+  &:hover {
+    background-color: rgba($color: $primaryColor, $alpha: 0.7);
+  }
+}
